@@ -33,6 +33,10 @@ def main():
             if ast.is_colliding(player):
                 print("Game over!")
                 return
+            for bullet in shots:
+                if bullet.is_colliding(ast):
+                    bullet.kill()
+                    ast.kill()
         screen.fill("black")
 
         for obj in drawable:
